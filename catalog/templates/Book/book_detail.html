@@ -3,6 +3,9 @@
 {% block content %}
   <h1>Title: {{ book.title }}</h1>
 
+  <a href="{% url 'book_update' book.pk %}">Edit</a>
+  <a href="{% url 'book_delete' book.pk %}" style="color:red"> Delete </a>
+
   <p><strong>Author:</strong> <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
   <p><strong>Summary:</strong> {{ book.summary }}</p>
   <p><strong>ISBN:</strong> {{ book.isbn }}</p> 
